@@ -1,0 +1,27 @@
+         
+<script type="text/javascript">
+	$(document).ready(function(){
+		var errors = document.getElementById("errors");
+
+		if(isInPage(errors)){
+		    $("#errors li").each(function(){
+		    	console.log("Errors: " + errors);
+        	    console.log($(this).css('display'));
+        	    errors_visibility = $(this).css('display');
+        	    console.log("Errors visibility: " + errors_visibility);
+        	    error_text = $(this).text();
+        	    console.log("Error text: " + error_text);
+        	    
+        	    if(errors_visibility && errors_visibility != "none"){
+        	    	$(this).css('color','red');
+        	    	// $(".belt .container").append("<h3 style='color:red;'>" + error_text + "</h3>");
+        	    	alert(error_text);
+        	    }
+        	});
+        }
+	});
+	function isInPage(node) {
+  		return (node === document.body) ? false : document.body.contains(node);
+	}
+
+</script>
